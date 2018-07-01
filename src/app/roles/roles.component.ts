@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+
+import { Serie } from '../model/serie';
+import { Role } from '../model/role';
 
 @Component({
   selector: 'app-roles',
@@ -7,9 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RolesComponent implements OnInit {
 
-  constructor() { }
+  @Input() serie: Serie;
+  @Input() roles: Role[];
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
 }
+

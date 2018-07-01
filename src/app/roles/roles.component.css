@@ -1,0 +1,29 @@
+.roles {
+  width: 600px;
+}
+.role {
+  margin-bottom: 5px;
+  background: #fff;
+}
+.role .photo,
+.role .names {
+  display: inline-table;
+  height: 200px;
+  vertical-align: top;
+}
+.role .photo {
+  width: 200px;
+  height: 200px;
+}
+.role .names {
+  width: 400px;
+  padding: 20px;
+}
+.role .names-container {
+  display: table-cell;
+  vertical-align: middle;
+}
+.role .names-container .character {
+  margin-top: 5px;
+  color: #999;
+}

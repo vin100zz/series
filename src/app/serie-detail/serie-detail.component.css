@@ -30,43 +30,11 @@
   color: #fff;
 }
 
-/* List */
-.list {
+/* Episodes */
+.episodes {
   width: 600px;
   margin: 0 50px;
 }
-.list > li {
-  background: #fff;
-}
-
-/* Roles */
-.role {
-  margin-bottom: 5px;
-}
-.role .photo,
-.role .names {
-  display: inline-table;
-  height: 200px;
-  vertical-align: top;
-}
-.role .photo {
-  width: 200px;
-  height: 200px;
-}
-.role .names {
-  width: 400px;
-  padding: 20px;
-}
-.role .names-container {
-  display: table-cell;
-  vertical-align: middle;
-}
-.role .names-container .character {
-  margin-top: 5px;
-  color: #999;
-}
-
-/* Episodes */
 .episode {
   margin-bottom: 20px;
 }
@@ -93,6 +61,7 @@
 }
 .episode .storyline {
   padding: 10px;
+  background: #fff;
   color: #999;
   font-size: 80%;
 }
