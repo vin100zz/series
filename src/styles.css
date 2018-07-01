@@ -1,0 +1,16 @@
+@font-face {
+  font-family: "series";
+  src: url(sansation.ttf);
+ }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-family: series;
+  font-size: 16pt;
+}
+ul {
+  list-style-type: none;
+}

@@ -1,0 +1,41 @@
+<div *ngIf="serie">
+
+	<div class="back" [style.background-image]="'url(assets/series/' + serie.id + '/back.jpg)'"></div>
+
+	<div class="main">
+
+		<div class="logo" [style.background-image]="'url(assets/series/' + serie.id + '/logo.png)'"></div>
+
+		<div *ngIf="serie.roles.length" class="header">Casting</div>
+		<ul class="list roles">
+			<li *ngFor="let role of serie.roles" class="role">
+				<div class="photo" [style.background-image]="'url(assets/series/' + serie.id + '/' + role.actor.id + '.png)' "></div>
+				<div class="names">
+					<div class="names-container">
+						<div>{{role.actor.name}}</div>
+						<div class="character">{{role.character}}</div>
+					</div>
+				</div>
+			</li>
+		</ul>
+
+		<div *ngIf="serie.episodes.length" class="header">Épisodes</div>
+		<ul class="list episodes">
+			<li *ngFor="let episode of serie.episodes; index as i" class="episode">
+				<div class="episode-name">
+					<span *ngIf="episode.season || episode.year" class="season">
+						<span *ngIf="episode.season">S{{episode.season}}</span>
+						<span *ngIf="episode.season && episode.year"> (</span>
+						<span *ngIf="episode.year">{{episode.year}}</span>
+						<span *ngIf="episode.season && episode.year">)</span>
+					</span>
+					<span class="title">{{episode.title}}</span>
+				</div>
+				<img [src]="'assets/series/' + serie.id + '/' + (i+1) + '.png'" />
+				<div class="storyline">{{episode.storyline}}</div>
+			</li>
+		</ul>
+
+	</div>
+
+</div>

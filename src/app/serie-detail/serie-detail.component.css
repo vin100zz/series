@@ -1,0 +1,101 @@
+.back {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center center;
+  opacity: 0.8;
+  filter: blur(1px);
+}
+
+.main {
+  position: absolute;
+  left: calc(50% - 350px);
+}
+
+.logo {
+  width: 700px;
+  height: 200px;
+  margin: 40px auto 40px auto;
+  background-position: center;
+}
+
+/* Header */
+.header {
+  margin: 40px 50px 10px 50px;
+  padding: 10px 20px;
+  background: #333333e0;
+  color: #fff;
+}
+
+/* List */
+.list {
+  width: 600px;
+  margin: 0 50px;
+}
+.list > li {
+  background: #fff;
+}
+
+/* Roles */
+.role {
+  margin-bottom: 5px;
+}
+.role .photo,
+.role .names {
+  display: inline-table;
+  height: 200px;
+  vertical-align: top;
+}
+.role .photo {
+  width: 200px;
+  height: 200px;
+}
+.role .names {
+  width: 400px;
+  padding: 20px;
+}
+.role .names-container {
+  display: table-cell;
+  vertical-align: middle;
+}
+.role .names-container .character {
+  margin-top: 5px;
+  color: #999;
+}
+
+/* Episodes */
+.episode {
+  margin-bottom: 20px;
+}
+.episode .episode-name {
+  padding: 5px 10px;
+  background: #666;
+}
+.episode .episode-name > * {
+  vertical-align: middle;
+}
+.episode .season {
+  display: inline-block;
+  height: 1rem;
+  margin-right: 10px;
+  padding: 1px 5px;
+  background: #bbb;
+  color: #666;
+  text-align: center;
+  line-height: 1rem;
+  font-size: 60%;
+}
+.episode .title {
+  color: #ccc;
+}
+.episode .storyline {
+  padding: 10px;
+  color: #999;
+  font-size: 80%;
+}
+.episode img {
+  display: block;
+}

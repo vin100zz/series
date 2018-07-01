@@ -1,0 +1,452 @@
+[
+  {
+    "name": "Sherlock",
+    "roles": [
+      {
+        "actor": "Benedict Cumberbatch",
+        "character": "Sherlock Holmes"
+      },
+      {
+        "actor": "Martin Freeman",
+        "character": "Dr John Watson"
+      },
+      {
+        "actor": "Mark Gatiss",
+        "character": "Mycroft Holmes"
+      },
+      {
+        "actor": "Rupert Graves",
+        "character": "Lieutenant Lestrade"
+      },
+      {
+        "actor": "Andrew Scott",
+        "character": "Jim Moriarty"
+      },
+      {
+        "actor": "Amanda Abbington",
+        "character": "Mary Morstan"
+      },
+      {
+        "actor": "Una Stubbs",
+        "character": "Mrs Hudson"
+      }
+    ],
+    "episodes": [
+      {
+        "season": "1",
+        "year": 2010,
+        "title": "A Study in Pink",
+        "storyline": "Héros de guerre et invalide depuis l'Afghanistan, le Dr Watson fait la connaissance d'un personnage étrange et fascinant, un certain Sherlock Holmes, à la recherche, comme lui d'un colocataire. Dans le même temps, une vague incompréhensible de suicides déroute Scotland Yard. Seul Holmes peut les aider."
+      },
+      {
+        "season": "1",
+        "year": 2010,
+        "title": "The Blind Banker",
+        "storyline": "Un message mystérieux est gribouillé sur les murs autour de Londres. La première personne à voir ce message est morte quelques heures après sa lecture. Sherlock se plonge dans un monde de codes et des symboles, consultant les meilleurs artistes de graffiti de Londres. Il apprend bientôt que la ville est sous l'emprise d'un gang de contrebandiers internationaux, une société secrète appelée le Lotus noir."
+      },
+      {
+        "season": "1",
+        "year": 2010,
+        "title": "The Great Game",
+        "storyline": "Un indice étrange dans une pièce vide, une voiture imbibée de sang, une peinture sans prix, un poseur de bombe dérangé. Avec un temps limite avant la prochaine explosion, une bataille d'esprits se joue entre Sherlock, John et le mystérieux inconnu qui semble connaître toutes les réponses..."
+      },
+      {
+        "season": "2",
+        "year": 2012,
+        "title": "A Scandal in Belgravia",
+        "storyline": "À la suite d'un coup de fil étrange, le face à face entre Sherlock et Moriarty prend fin de manière inattendue. Plus tard, le détective est interrompu dans une de ses enquêtes et est conduit avec Watson au palais de Buckingham. En effet, la dominatrice Irene Adler possède des photos compromettantes d'une princesse royale et Sherlock est engagé pour les récupérer. Cependant, après avoir fait connaissance de la brillante Irene, il se rend compte qu'elle a des preuves beaucoup plus dangereuses en sa possession."
+      },
+      {
+        "season": "2",
+        "year": 2012,
+        "title": "The Hounds of Baskerville",
+        "storyline": "Sherlock et John sont contactés par Henry Knight, un jeune homme tourmenté par les souvenirs traumatiques qu'il a de la mort de son père, tué par un monstrueux molosse vingt ans plus tôt. Henry est persuadé que la base militaire de Baskerville est utilisée par le gouvernement pour créer des animaux mutants. Holmes et Watson se rendent donc dans le Dartmoor pour enquêter."
+      },
+      {
+        "season": "2",
+        "year": 2012,
+        "title": "The Reichenbach Fall",
+        "storyline": "La tour de Londres, la prison de Pentoville, la Banque d’Angleterre. Tous cambriolés le même jour ! Seul James Moriarty, plus grand criminel de son époque, est capable d’une telle chose. Mais pourquoi n’a-t-il rien volé ?"
+      },
+      {
+        "season": "3",
+        "year": 2014,
+        "title": "The Empty Hearse",
+        "storyline": "Après deux ans passés en souterrain à démanteler le réseau de Moriarty, Sherlock est rappelé à Londres par Mycroft pour empêcher un attentat terroriste. Sherlock souhaite retrouver l'aide de Watson, mais celui-ci a tourné la page et s'est fiancé."
+      },
+      {
+        "season": "3",
+        "year": 2014,
+        "title": "The Sign of Three",
+        "storyline": "Sherlock est le témoin de mariage de Watson, une position très inconfortable pour le détective. Au cours de son discours pendant le repas, le détective décide donc d'évoquer deux affaires qu'ils ont menées ensemble et qui pourraient être résolues pendant le mariage."
+      },
+      {
+        "season": "3",
+        "year": 2014,
+        "title": "His Last Vow",
+        "storyline": "Sherlock a disparu depuis un mois quand Watson le retrouve dans un repaire de drogués. Il affirme qu'il enquête sur Charles Augustus Magnussen, un magnat de la presse et maître chanteur que Mycroft considère comme un mal nécessaire."
+      },
+      {
+        "season": "S",
+        "year": 2016,
+        "title": "The Abominable Bride",
+        "storyline": "Sherlock, sous l'influence de la drogue, entre dans son palais mental afin de résoudre un crime datant de l'époque victorienne concernant une mariée se tirant dans la tête avant de se relever de la tombe pour tuer son époux. S'il résout ce crime, cela pourrait l'aider à comprendre comment Moriarty s'est lui aussi relevé d'entre les morts après s'être lui-même similairement tiré dans la tête. Il résout le crime, concluant que Moriarty est en fait bien mort, mais avait planifié les événements à venir après sa mort."
+      },
+      {
+        "season": "4",
+        "year": 2017,
+        "title": "The Six Thatchers",
+        "storyline": "Avec le retour de Moriarty annoncé à travers Londres, le gouvernement britannique décide de blanchir Sherlock Holmes de la mort de Charles Augustus Magnussen. De retour à Baker Street et alors que John et Mary Watson deviennent parents, le détective attend le prochain coup du criminel. L'affaire étrange de la mort d'un adolescent va mener Sherlock Holmes sur la piste d'un homme traquant une série de bustes de Margaret Thatcher."
+      },
+      {
+        "season": "4",
+        "year": 2017,
+        "title": "The Lying Detective",
+        "storyline": "Sherlock s’attaque à l’ennemi le plus terrifiant de sa carrière: le puissant Culverton Smith, un homme qui détient un très sombre secret."
+      },
+      {
+        "season": "4",
+        "year": 2017,
+        "title": "The Final Problem",
+        "storyline": "Des secrets enterrés depuis fort longtemps referont surface grâce aux talents d’investigateurs de notre binôme favori. Depuis le début, quelqu’un a joué un double jeu. Seul et sans défense, Sherlock et le docteur Watson vont maintenant devoir faire face à leur plus grand défi… La partie est-elle enfin terminée ?"
+      }
+    ]
+  },
+  {
+    "name": "Peaky Blinders",
+    "roles": [
+      {
+        "actor": "Cillian Murphy",
+        "character": "Thomas Shelby"
+      },
+      {
+        "actor": "Sam Neill",
+        "character": "Major Campbell"
+      },
+      {
+        "actor": "Annabelle Wallis",
+        "character": "Grace Burgess"
+      },
+      {
+        "actor": "Paul Anderson",
+        "character": "Arthur Shelby"
+      },
+      {
+        "actor": "Joe Cole",
+        "character": "John Shelby"
+      },
+      {
+        "actor": "Helen McCrory",
+        "character": "Aunt Polly"
+      }
+    ],
+    "episodes": [
+      {
+        "year": 2013,
+        "title": "Saison 1",
+        "storyline": "Birmingham, 1919. Un gang familial règne sur un quartier de la ville : les Peaky Blinders, ainsi nommés pour les lames de rasoir qu’ils cachent dans la visière de leurs casquettes. Paris de bookmakers, marché noir et vols divers sont leur lot quotidien. Mais leur activité prend une dimension nouvelle lorsque leur chef, Thomas Shelby, récupère une cargaison d’armes de l’usine locale."
+      },
+      {
+        "year": 2014,
+        "title": "Saison 2",
+        "storyline": "Birmingham, 1922. Désormais prospère, le gang des Shelby, les Peaky Blinders, règne sur les paris clandestins et la contrebande d’alcool avec la complicité de la police locale. Chef incontesté du clan familial, Tommy a décidé de conquérir Londres et de se tailler une place entre deux redoutables rivaux, en guerre l’un contre l’autre : le juif Alfie Solomon et l’Italien Darby Sabini. Son plan, risqué, consiste à proposer une alliance au premier, en perte de vitesse, contre le second. Mais alors que les Shelby sont réunis au cimetière pour enterrer l’un des leurs, leur pub est incendié."
+      }
+    ]
+  },
+  {
+    "name": "Fargo",
+    "episodes": [
+      {
+        "year": 2014,
+        "title": "Saison 1",
+        "storyline": "En 2006, à Bemidji dans le Minnesota, Lester Nygaard, interprété par Martin Freeman, est un homme effacé et sans envergure travaillant pour une compagnie d'assurance. Sa vie bascule le jour où il décide de se confier à un homme, Lorne Malvo, interprété par Billy Bob Thornton, qui se révèle être un tueur à gages. Celui-ci tue un certain Sam Hess, qui, dans sa jeunesse, harcelait Lester au lycée. Un mensonge en entraînant un autre, Lester va radicalement changer de vie et extérioriser sa véritable personnalité, celle d'un manipulateur prêt à tout pour être accepté par une société qui l'a trop longtemps ignoré.",
+        "roles": [
+          {
+            "actor": "Martin Freeman",
+            "character": "Lester Nygaard"
+          },
+          {
+            "actor": "Billy Bob Thornton",
+            "character": "Lorne Malvo"
+          },
+          {
+            "actor": "Allison Tolman",
+            "character": "Molly Solverson"
+          },
+          {
+            "actor": "Colin Hanks",
+            "character": "Gus Grimly"
+          },
+          {
+            "actor": "Keith Carradine",
+            "character": "Lou Solverson"
+          },
+          {
+            "actor": "Bob Odenkirk",
+            "character": "Bill Oswall"
+          },
+          {
+            "actor": "Russell harvard",
+            "character": "Mr Wrench"
+          },
+          {
+            "actor": "Adam Goldberg",
+            "character": "Mr Numbers"
+          }
+        ]
+      },
+      {
+        "year": 2015,
+        "title": "Saison 2",
+        "storyline": "La saison traite d'un incident qui s'est déroulé en 1979 à Sioux Falls dans le Dakota du Sud et qui a été plusieurs fois mentionné durant la première saison. Elle met en scène la coiffeuse Peggy Blumquist et son mari, un boucher du nom d'Ed Blumquist, qui décident de couvrir leurs traces après la mort accidentelle de Rye Gerhardt, un des fils d'une famille criminelle locale dont la matriarche est Floyd Gerhardt. Pendant ce temps, Lou Solverson, qui vient de rentrer du Vietnam et le shérif Hank Larsson, enquêtent sur trois meurtres commis par Rye Gerhardt tout en protégeant le candidat républicain aux élections présidentielles Ronald Reagan lors de son arrêt de campagne à Fargo."
+      },
+      {
+        "year": 2017,
+        "title": "Saison 3",
+        "storyline": "En 2010, dans le Minnesota, Emmit Stussy, un homme d'affaires renommé dans le monde du parking, vit une vie calme et opulente tandis que son petit frère Raymond a une vie difficile et enchaîne les mauvais coups. Alors que Ray avait blâmé son aîné toute sa vie pour ses succès, l’arrivée d’une personnalité mystérieuse va changer la donne."
+      }
+    ]
+  },
+  {
+    "name": "Silicon Valley",
+    "roles": [
+      {
+        "actor": "Thomas Middleditch",
+        "character": "Richard Hendricks"
+      },
+      {
+        "actor": "Zach Woods",
+        "character": "Jared Dunn"
+      },
+      {
+        "actor": "Martin Starr",
+        "character": "Bertram Gilfoyle"
+      },
+      {
+        "actor": "Kumail Nanjiani",
+        "character": "Dinesh Chugtai"
+      },
+      {
+        "actor": "T. J. Miller",
+        "character": "Erlich Bachman"
+      },
+      {
+        "actor": "Matt Ross",
+        "character": "Gavin Belson"
+      },
+      {
+        "actor": "Josh Brener",
+        "character": "Nelson Bighetti"
+      },
+      {
+        "actor": "Amanda Crew",
+        "character": "Monica Hall"
+      }
+    ]
+  },
+  {
+    "name": "La Casa de Papel",
+    "roles": [
+      {
+        "actor": "Álvaro Morte",
+        "character": "Le Professeur"
+      },
+      {
+        "actor": "Pedro Alonso",
+        "character": "Berlin"
+      },
+      {
+        "actor": "Úrsula Corberó",
+        "character": "Tokyo"
+      },
+      {
+        "actor": "Miguel Herrán",
+        "character": "Rio"
+      },
+      {
+        "actor": "Jaime Lorente",
+        "character": "Denver"
+      },
+      {
+        "actor": "Alba Flores",
+        "character": "Nairobi"
+      },
+      {
+        "actor": "Darko Peric",
+        "character": "Helsinki"
+      },
+      {
+        "actor": "Itziar Ituño",
+        "character": "Raquel Murillo"
+      },
+      {
+        "actor": "Fernando Soto",
+        "character": "Ángel Rubio"
+      },
+      {
+        "actor": "Enrique Arce",
+        "character": "Arturo Román"
+      },
+      {
+        "actor": "Esther Acebo",
+        "character": "Mónica Gaztambide"
+      },
+      {
+        "actor": "María Pedraza",
+        "character": "Alison Parker"
+      }
+    ]
+  },
+  {
+    "name": "Black Mirror",
+    "episodes": [
+      {
+        "season": "1",
+        "title": "The National Anthem",
+        "storyline": "Le Premier ministre du Royaume-Uni, Michael Callow, est confronté à un énorme et choquant dilemme lorsque la princesse Susannah, un membre bien-aimé de la famille royale britannique, est kidnappée : la jeune fille ne s'en sortira indemne que si le Premier ministre a des rapports sexuels avec un porc et que leur relation passe en direct et sans trucages, avant 16 h, sur tous les médias nationaux."
+      },
+      {
+        "season": "1",
+        "title": "15 Million Merits",
+        "storyline": "Bing Madsen vit dans un monde où les écrans sont omniprésents. Comme tous ses congénères, il passe ses journées à pédaler sur un vélo d'appartement pour accumuler de l'argent (des Merits en version originale). Un jour, il rencontre Abi Carner, une jeune chanteuse au talent bien réel. Mais tous deux sont confrontés aux règles implacables de cet univers confiné lorsqu'ils tentent de concrétiser leurs rêves en participant à Hot Shot, une émission censée dénicher les talents de demain (à l'instar de The X Factor ou de la Nouvelle Star)."
+      },
+      {
+        "season": "1",
+        "title": "The Entire History of You",
+        "storyline": "Liam Foxwell, un jeune avocat à la recherche d'un emploi, se prend à douter de la fidélité de sa femme. Comme presque tout le monde, il a une puce implantée derrière l'oreille qui lui permet de stocker ses souvenirs et de les rediffuser quand bon lui semble. Il utilise donc les images en sa possession pour enquêter sur ce supposé adultère et confronter les deux amants."
+      },
+      {
+        "season": "2",
+        "title": "Be Right Back",
+        "storyline": "Ash et Martha s'installent à la campagne, dans la maison où Ash a passé son enfance. Hélas, le lendemain, le jeune homme se tue sur la route. Aux funérailles, Martha apprend l'existence d'un service qui se sert de l'historique Internet des défunts pour simuler des conversations entre morts et vivants. Le soir même, la jeune femme reçoit un message électronique d'Ash... Martha s'habitue alors à vivre avec cette personnalité virtuelle animée par les nombreuses traces numériques qu'Ash a laissées sa vie durant."
+      },
+      {
+        "season": "2",
+        "title": "White Bear",
+        "storyline": "Une jeune femme presque totalement amnésique se réveille dans une chambre lugubre. Pour comprendre ce qui l'a menée là, elle explore d'abord la maison où elle se trouve, puis finit par sortir. Elle découvre un quartier froid et désolé : les habitants qu'elle aperçoit l'épient à l'aide de leurs smartphones, ignorent ses appels à l'aide, et s'enfuient quand elle se rapproche d'eux ; soudain un homme cagoulé descend d'une voiture, prend un fusil de chasse et commence à tirer sur elle..."
+      },
+      {
+        "season": "2",
+        "title": "The Waldo Moment",
+        "storyline": "Jamie Salter est un comédien de seconde zone qui prête sa voix à Waldo, un ours bleu en images de synthèse. Après l'entrevue corsée d'un politicien du Parti conservateur qui pensait participer à une émission pour enfants, Waldo acquiert une popularité surprenante. De plus en plus impliqué dans la vie politique, Waldo en vient à se présenter aux élections locales ; mais Jamie ne se satisfait pas du succès de son personnage."
+      },
+      {
+        "season": "Xmas",
+        "title": "White Christmas",
+        "storyline": "Dans une cabane perdue dans les bois le jour de Noël, deux hommes se racontent leur passé; tous deux ayant des secrets qu'ils avouent l'un à l'autre."
+      },
+      {
+        "season": "3",
+        "title": "Nosedive",
+        "storyline": "Dans une société régie par la cote personnelle, Lacie veut tout faire pour obtenir l'appartement de ses rêves. Quand son amie d'enfance au statut irréprochable lui demande d'être sa demoiselle d'honneur, Lacie voit l'opportunité d'améliorer sa note et réaliser ses rêves."
+      },
+      {
+        "season": "3",
+        "title": "Playtest",
+        "storyline": "Pour financer la fin de son tour du monde, un jeune homme en quête d'aventure accepte de tester un système de jeu vidéo en réalité augmentée directement relié à son cerveau. Il va vivre une expérience plus intense que prévue.."
+      },
+      {
+        "season": "3",
+        "title": "Shut Up and Dance",
+        "storyline": "Plusieurs personnes se font pirater et sous la menace de voir leurs vies ruinées par la mise en ligne d'informations compromettantes les concernant, se retrouvent à suivre les instructions absurdes et risquées des pirates."
+      },
+      {
+        "season": "3",
+        "title": "San Junipero",
+        "storyline": "En 1987, dans une ville de bord de mer, une jeune femme timide et une fêtarde extravertie nouent un lien puissant qui semble défier les lois de l'espace et du temps."
+      },
+      {
+        "season": "3",
+        "title": "Men Against Fire",
+        "storyline": "Dans un monde après-guerre, une unité militaire d'élite est chargée de tuer les humains dégénérés qui se cachent. L'un des nouveaux membres va malgré lui découvrir la réalité cachée par son équipement de haute technologie."
+      },
+      {
+        "season": "3",
+        "title": "Hated in the Nation",
+        "storyline": "Une série de meurtres sanglants frappe les cibles au cœur de bad buzz dans les médias britanniques. Les policiers chargés de retrouver le coupable découvrent son arme inédite mais surtout ses motivations."
+      },
+      {
+        "season": "4",
+        "title": "USS Callister",
+        "storyline": "Le capitaine Robert Daly dirige l'équipage de son vaisseau spatial, le USS Callister de Space Fleet, d'une poigne ferme et juste. Il traque son ennemi, Valdack, qui parvient encore à lui échapper."
+      },
+      {
+        "season": "4",
+        "title": "Arkangel",
+        "storyline": "Inquiète pour la sécurité de sa fillette, Marie, mère célibataire, équipe celle-ci d'un implant de surveillance de pointe qui permet de la localiser, et pas seulement."
+      },
+      {
+        "season": "4",
+        "title": "Crocodile",
+        "storyline": "Mia, une architecte, pourra-t-elle taire son terrible secret quand Shazia, enquêtrice d'assurance, sonne à sa porte, glanant les récents souvenirs d'un accident voisin ?"
+      },
+      {
+        "season": "4",
+        "title": "Hang the DJ",
+        "storyline": "Selon ce système de rencontres, toute relation a une date de fabrication et d'expiration. Mais Frank et Amy remettent vite en question cette logique stérile."
+      },
+      {
+        "season": "4",
+        "title": "Metalhead",
+        "storyline": "En explorant un entrepôt abandonné, trois pillards en quête de ressources déclenchent un monstre impitoyable qui s’élance à leur poursuite dans un désert inhospitalier."
+      },
+      {
+        "season": "4",
+        "title": "Black Museum",
+        "storyline": "Sur un tronçon d'autoroute vétuste, une touriste tombe sur un musée vantant des artefacts criminels rares. Mais le clou de l'exposition lui réserve une surprise de choc."
+      }
+    ]
+  },
+  {
+    "name": "Homeland",
+    "roles": [
+      {
+        "actor": "Claire Danes",
+        "character": "Carrie Mathison"
+      },
+      {
+        "actor": "Damian Lewis",
+        "character": "Nicholas Brody"
+      },
+      {
+        "actor": "Mandy Patinkin",
+        "character": "Saul Berenson"
+      },
+      {
+        "actor": "Rupert Friend",
+        "character": "Peter Quinn"
+      },
+      {
+        "actor": "F. Murray Abraham",
+        "character": "Dar Adal"
+      }
+    ]
+  },
+  {
+    "name": "Orange is the New Black"
+  },
+  {
+    "name": "The Americans"
+  },
+  {
+    "name": "Breaking Bad"
+  },
+  {
+    "name": "House of Cards"
+  },
+  {
+    "name": "Oz"
+  },
+  {
+    "name": "Dexter"
+  },
+  {
+    "name": "Lost"
+  },
+  {
+    "name": "Prison Break"
+  },
+  {
+    "name": "24"
+  }
+]

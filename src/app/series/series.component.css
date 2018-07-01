@@ -1,0 +1,14 @@
+.series {
+  text-align: center;
+}
+li {
+  display: inline-block;
+  margin: 10px;
+}
+a {
+  display: block;
+  width: 500px;
+  height: 200px;
+  background-position: center;
+}
+

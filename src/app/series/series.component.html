@@ -1,0 +1,5 @@
+<ul class="series">
+  <li *ngFor="let serie of series">
+    <a routerLink="/detail/{{serie.id}}" [style.background-image]="'url(assets/series/' + serie.id + '/logo.png)'"></a>
+  </li>
+</ul>
