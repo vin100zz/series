@@ -1,0 +1,7 @@
+<ul>
+  <li *ngFor="let movieStatus of movieStatuses">
+    <a routerLink="/movie/{{movieStatus.id}}">{{movieStatus.id}}</a>
+    <span>></span>
+    <span>{{movieStatus.status}}</span>
+  </li>
+</ul>

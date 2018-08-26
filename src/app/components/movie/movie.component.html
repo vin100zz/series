@@ -1,0 +1,19 @@
+<div *ngIf="movie">
+
+  <!-- <pre>{{movie | json}}</pre> -->
+
+  <div>{{movie.title}}</div>
+  <div>{{movie.releaseYear}}</div>
+  <div (click)="updateStatus()">{{movie.status}}</div>
+
+  <ul>
+    <li *ngFor="let director of movie.directors">{{director}}</li>
+  </ul>
+
+  <ul>
+    <li *ngFor="let cast of movie.casts">{{cast.actor}}, as {{cast.character}}</li>
+  </ul>
+
+  <img [src]="'http://image.tmdb.org/t/p/w500/' + movie.posterPath" />
+
+</div>

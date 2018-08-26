@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 import { ActivatedRoute } from '@angular/router';
-import { Location } from '@angular/common';
 
 import { Serie } from '../model/serie';
 import { SerieService } from '../serie.service';
@@ -17,7 +16,6 @@ export class SerieDetailComponent implements OnInit {
 
 	constructor(
 		private route: ActivatedRoute,
-		private location: Location,
 		private serieService: SerieService
 	) { }
 

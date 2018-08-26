@@ -7,7 +7,9 @@
 		<div class="logo" [style.background-image]="'url(assets/series/' + serie.id + '/logo.png)'"></div>
 
 		<div *ngIf="serie.roles.length" class="header">Casting</div>
-		<app-roles [serie]="serie" [roles]="serie.roles"></app-roles>
+		<div class="roles">
+			<app-roles [serie]="serie" [roles]="serie.roles"></app-roles>
+		</div>
 
 		<div *ngIf="serie.episodes.length" class="header">Épisodes</div>
 		<ul class="episodes">

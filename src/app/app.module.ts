@@ -9,13 +9,17 @@ import { FormsModule } from '@angular/forms';
 import { SerieDetailComponent } from './serie-detail/serie-detail.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { RolesComponent } from './roles/roles.component';
+import { MovieComponent } from './components/movie/movie.component';
+import { MoviesComponent } from './components/movies/movies.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SeriesComponent,
     SerieDetailComponent,
-    RolesComponent
+    RolesComponent,
+    MovieComponent,
+    MoviesComponent
   ],
   imports: [
     BrowserModule,

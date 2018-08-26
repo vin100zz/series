@@ -5,6 +5,6 @@ export class Actor {
   constructor(name: string) {
     this.name = name;
 
-    this.id = this.name.toLowerCase().replace(/ /g, '_');
+    this.id = this.name.toLocaleLowerCase().replace(/ /g, '_');
   }
 }

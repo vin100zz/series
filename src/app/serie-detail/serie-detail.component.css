@@ -30,6 +30,11 @@
   color: #fff;
 }
 
+/* Roles */
+.roles {
+  padding-left: 50px;
+}
+
 /* Episodes */
 .episodes {
   width: 600px;
