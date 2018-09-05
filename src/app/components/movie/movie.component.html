@@ -1,27 +1,77 @@
 <div *ngIf="movie">
 
-  <!-- <pre>{{movie | json}}</pre> -->
-
-  <div>{{movie.title}}</div>
-  <div>{{movie.releaseYear}}</div>
-
-  <div *ngIf="movie.status === -1">
-    <div (click)="save()">#Save#</div>
-  </div>
-  <div *ngIf="movie.status !== -1">
-    <div (click)="update()">{{movie.status}} #Update#</div>
-    <div (click)="delete()">#Delete#</div>
-  </div>
-
-  <ul>
-    <li *ngFor="let director of movie.directors">{{director}}</li>
-  </ul>
-
-  <ul>
-    <li *ngFor="let cast of movie.casts">{{cast.actor}}, as {{cast.character}}</li>
-  </ul>
-
   <img [src]="'http://image.tmdb.org/t/p/w500/' + movie.backgroundPath" />
+
+  <div class="header">
+    <div class="title">{{movie.title}}</div>
+    <div class="details">
+      <div>
+        <i class="far fa-calendar-alt fa-left"></i>
+        <span>{{movie.releaseYear}}</span>
+      </div>
+      <div>
+        <div class="rating">
+          <div class="rating-top" [ngStyle]="{'width': movie.rating*10+'%'}">
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+          </div>
+          <div class="rating-bottom">
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+          </div>
+        </div>
+        <span>{{movie.rating}}</span>
+      </div>
+    </div>
+
+    <div *ngIf="movie.status === -1">
+      <div class="button save" (click)="save()">
+        <i class="fas fa-plus"></i>
+      </div>
+    </div>
+    <div *ngIf="movie.status !== -1">
+      <div class="button update" [ngClass]="movie.status == 0 ? 'update1' : 'update0'" (click)="update()">
+        <i class="fas" [ngClass]="movie.status == 0 ? 'fa-check' : 'fa-undo-alt'"></i>
+      </div>
+      <div class="button delete" (click)="delete()">
+        <i class="fas fa-times"></i>
+      </div>
+    </div>
+  </div>
+
+  <div class="body">
+
+    <div class="section directors">
+      <i class="fas fa-video"></i>
+      <ul>
+        <li *ngFor="let director of movie.directors">{{director}}</li>
+      </ul>
+    </div>
+
+    <div class="section actors">
+      <i class="fas fa-user"></i>
+      <ul>
+        <li *ngFor="let cast of movie.casts">
+          <div class="actor">{{cast.actor}}</div>
+          <div class="character">{{cast.character}}</div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="section summary">
+      <i class="fas fa-quote-right"></i>
+      <div class="tagline">{{movie.tagline}}</div>
+      <div class="overview">{{movie.overview}}</div>
+    </div>
+
+  </div>
+
   <img [src]="'http://image.tmdb.org/t/p/w500/' + movie.posterPath" />
 
 </div>

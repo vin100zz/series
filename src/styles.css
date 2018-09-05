@@ -1,5 +1,5 @@
 @font-face {
-  font-family: "series";
+  font-family: "title";
   src: url(sansation.ttf);
  }
 * {
@@ -8,9 +8,47 @@
   box-sizing: border-box;
 }
 html {
-  font-family: series;
-  font-size: 16pt;
+  font-family: arial;
+  font-size: 14pt;
+}
+body {
+  width: 500px;
+  margin: auto;
 }
 ul {
   list-style-type: none;
+}
+
+.far, .fas, .fal {
+  font-size: 12pt;
+}
+.fa-left {
+  margin-right: 8px;
+}
+
+.button {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 100%;
+  text-align: center;
+  color: white;
+}
+.button .far, .button .fas, .button .fal {
+  font-size: 13pt;
+}
+.button:hover {
+  filter: brightness(115%);
+}
+.button.save {
+  background-color: dodgerblue;
+}
+.button.delete {
+  background-color: crimson;
+}
+.button.update0 {
+  background-color:lightslategray;
+}
+.button.update1 {
+  background-color: forestgreen;
 }
