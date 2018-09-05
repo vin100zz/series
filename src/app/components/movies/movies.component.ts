@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { MovieService } from '../../services/movie.service';
-import { MovieStatus } from '../../model/movieStatus';
+import { Movie } from '../../model/movie';
 
 @Component({
   selector: 'app-movies',
@@ -10,13 +10,13 @@ import { MovieStatus } from '../../model/movieStatus';
 })
 export class MoviesComponent implements OnInit {
 
-  movieStatuses: MovieStatus[];
+  movies: Movie[];
 
   constructor(private movieService: MovieService) {
+    this.movieService.list().subscribe(movies => this.movies = movies);
   }
 
   ngOnInit() {
-    this.movieService.listStatuses().subscribe(movieStatuses => this.movieStatuses = movieStatuses);
   }
 
 }

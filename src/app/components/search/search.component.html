@@ -1,0 +1,8 @@
+<input [(ngModel)]="query" #searchText (keyup)="onChange(searchText.value)">
+
+<ul>
+  <li *ngFor="let result of results">
+    <span>{{result.type}}</span>
+    <a routerLink="/movie/{{result.id}}">{{result.label}}</a>
+  </li>
+</ul>

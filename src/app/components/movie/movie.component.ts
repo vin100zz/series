@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-
+import { Router } from '@angular/router';
 
 import { MovieService } from '../../services/movie.service';
 import { Movie } from '../../model/movie';
@@ -14,16 +14,30 @@ export class MovieComponent implements OnInit {
 
   movie: Movie;
 
-  constructor(private route: ActivatedRoute, private movieService: MovieService) { }
+  constructor(private route: ActivatedRoute, private router: Router, private movieService: MovieService) { }
 
   ngOnInit() {
-    const id = this.route.snapshot.paramMap.get('id');
-    this.movieService.getDetails(id).subscribe(movie => this.movie = movie);
+    this.route.params.subscribe(params => {
+      this.movieService.get(params.id).subscribe(movie => this.movie = movie);
+    });
   }
 
-  updateStatus(): void {
-    ++this.movie.status;
-    this.movieService.updateStatus(this.movie.id, this.movie.status);
+  save(): void {
+    this.movieService.save(this.movie).subscribe(movie => {
+      this.movie = movie;
+    });
+  }
+
+  update(): void {
+    this.movieService.update(this.movie.id).subscribe(movie => {
+      this.movie = movie;
+    });
+  }
+
+  delete(): void {
+    this.movieService.delete(this.movie.id).subscribe(movie => {
+      this.router.navigateByUrl('/movies');
+    });
   }
 
 }

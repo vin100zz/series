@@ -1,3 +1,4 @@
+import { SearchComponent } from './components/search/search.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -13,7 +14,8 @@ const routes: Routes = [
   { path: 'series', component: SeriesComponent },
   { path: 'detail/:id', component: SerieDetailComponent },
   { path: 'movies', component: MoviesComponent },
-  { path: 'movie/:id', component: MovieComponent }
+  { path: 'movie/:id', component: MovieComponent },
+  { path: 'search', component: SearchComponent }
 ];
 
 @NgModule({

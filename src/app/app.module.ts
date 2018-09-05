@@ -11,6 +11,7 @@ import { AppRoutingModule } from './/app-routing.module';
 import { RolesComponent } from './roles/roles.component';
 import { MovieComponent } from './components/movie/movie.component';
 import { MoviesComponent } from './components/movies/movies.component';
+import { SearchComponent } from './components/search/search.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { MoviesComponent } from './components/movies/movies.component';
     SerieDetailComponent,
     RolesComponent,
     MovieComponent,
-    MoviesComponent
+    MoviesComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

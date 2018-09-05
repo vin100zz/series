@@ -6,6 +6,13 @@ import { Movie } from '../model/movie';
 import { MovieStatus } from '../model/movieStatus';
 
 import 'rxjs/add/operator/map';
+import { HttpHeaders } from '@angular/common/http';
+
+const httpOptions = {
+  headers: new HttpHeaders({
+    'content-type': 'application/json'
+  })
+};
 
 @Injectable({
   providedIn: 'root'
@@ -15,33 +22,68 @@ export class MovieService {
   constructor(private httpClient: HttpClient) {
   }
 
-  listStatuses(): Observable<MovieStatus[]> {
-    return this.httpClient.get<MovieStatus[]>('http://localhost/edsa-www/series/server/list.php')
-      .map(movieStatusesDto => movieStatusesDto.map(movieStatusDto => new MovieStatus(movieStatusDto)))
+  search(query: string): Observable<Object> {
+    return this.httpClient.get('https://api.themoviedb.org/3/search/multi?api_key=7aac1d19d45ad4753555583cabc0832d&language=fr&region=FR&query=' + query);
   }
 
-  updateStatus(id: string, status: number): void {
-    this.httpClient.get('http://localhost/edsa-www/series/server/save.php?id=' + id + '&status=' + status).subscribe();
+  save(movie: Movie): Observable<Movie> {
+    return this.httpClient.post<Movie>('server/save.php?id=' + movie.id, movie, httpOptions);
   }
 
-  getDetails(id: String): Observable<Movie> {
-    return this.httpClient.get('https://api.themoviedb.org/3/movie/' + id + '?api_key=7aac1d19d45ad4753555583cabc0832d&language=fr&region=FR')
-      .map(dto => {
-        let movie: Movie = new Movie(dto);
+  list(): Observable<Movie[]> {
+    return this.httpClient.get<Movie[]>('server/list.php');
+  }
 
-        this.httpClient.get('https://api.themoviedb.org/3/movie/' + id + '/credits?api_key=7aac1d19d45ad4753555583cabc0832d&language=fr&region=FR')
-          .map(creditsDto => {
-            movie.setCredits(creditsDto);
+  update(id: string): Observable<Movie> {
+    return this.httpClient.get<Movie>('server/update.php?id=' + id);
+  }
+
+  get(id: String): Observable<Movie> {
+    return new Observable<Movie>((observer) => {
+      this.httpClient.get<Movie>('server/get.php?id=' + id).subscribe(movieDto => {
+        if (movieDto) {
+          observer.next(movieDto);
+          observer.complete();
+          return;
+        }
+        this.httpClient.get('https://api.themoviedb.org/3/movie/' + id + '?api_key=7aac1d19d45ad4753555583cabc0832d&language=fr&region=FR&append_to_response=credits')
+          .map(dto => {
+            let movie: Movie = new Movie(dto);
+            observer.next(movie);
+            observer.complete();
+            return movie;
           }).subscribe();
-
-        this.listStatuses().subscribe(movieStatuses => {
-          let movieStatus = movieStatuses.find(movieStatus => movieStatus.id === movie.id);
-          movie.status = movieStatus ? movieStatus.status : -1;
-        });
-
-        return movie;
       });
+    })
   }
 
+  zget(id: String): Observable<Movie> {
+    return new Observable<Movie>((observer) => {
+      this.httpClient.get<Movie>('server/get.php?id=' + id).subscribe(movieDto => {
+        if (movieDto) {
+          observer.next(movieDto);
+          observer.complete();
+          return;
+        }
+        this.httpClient.get('https://api.themoviedb.org/3/movie/' + id + '?api_key=7aac1d19d45ad4753555583cabc0832d&language=fr&region=FR&append_to_response=credits')
+          .map(dto => {
+            let movie: Movie = new Movie(dto);
+
+            this.httpClient.get('https://api.themoviedb.org/3/movie/' + id + '/credits?api_key=7aac1d19d45ad4753555583cabc0832d&language=fr&region=FR')
+              .map(creditsDto => {
+                movie.setCredits(creditsDto);
+                observer.next(movie);
+                observer.complete();
+              }).subscribe();
+
+            return movie;
+          }).subscribe();
+      });
+    })
+  }
+
+  delete(id: string): Observable<Object> {
+    return this.httpClient.get('server/delete.php?id=' + id);
+  }
 
 }

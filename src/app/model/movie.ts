@@ -18,7 +18,7 @@ export class Movie {
   casts: Cast[];
   directors: string[];
 
-  status: number;
+  status: number = -1;
 
   constructor(dto: Object) {
     this.id = dto['id'] + '';
@@ -34,15 +34,14 @@ export class Movie {
 
     this.backgroundPath = dto['backdrop_path'];
     this.posterPath = dto['poster_path'];
-  }
 
-  setCredits(creditsDto: Object): void {
-    this.casts = creditsDto['cast']
+    this.casts = dto['credits']['cast']
       .splice(0, 5)
       .map(castDto => new Cast(castDto));
 
-    this.directors = creditsDto['crew']
+    this.directors = dto['credits']['crew']
       .filter(crewDto => crewDto.job === 'Director')
       .map(directorDto => directorDto.name);
   }
+
 }

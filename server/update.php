@@ -5,12 +5,16 @@ include_once "db.php";
 //header('Access-Control-Allow-Origin: *');
 
 $id = $_GET["id"];
-$data = utf8_decode(file_get_contents('php://input'));
+
+$result = DBAccess::singleRow("SELECT * FROM movies WHERE id='$id'");
+
+$data = json_decode($result["data"], true);
+$data["status"] = ($data["status"] == "0" ? "1" : "0");
+$data = json_encode($data);
 
 $data = str_replace("'", "''", $data);
-$data = str_replace("\"status\":-1", "\"status\":0", $data);
 
-DBAccess::exec("INSERT INTO movies(id, data) VALUES ('$id', '$data')");
+DBAccess::exec("UPDATE movies SET data='$data' WHERE id='$id'");
 
 $movie = DBAccess::singleValue("SELECT data FROM movies WHERE id='$id'");
 $movie = json_decode($movie);

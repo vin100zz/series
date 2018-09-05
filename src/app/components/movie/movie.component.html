@@ -4,7 +4,14 @@
 
   <div>{{movie.title}}</div>
   <div>{{movie.releaseYear}}</div>
-  <div (click)="updateStatus()">{{movie.status}}</div>
+
+  <div *ngIf="movie.status === -1">
+    <div (click)="save()">#Save#</div>
+  </div>
+  <div *ngIf="movie.status !== -1">
+    <div (click)="update()">{{movie.status}} #Update#</div>
+    <div (click)="delete()">#Delete#</div>
+  </div>
 
   <ul>
     <li *ngFor="let director of movie.directors">{{director}}</li>
@@ -14,6 +21,7 @@
     <li *ngFor="let cast of movie.casts">{{cast.actor}}, as {{cast.character}}</li>
   </ul>
 
+  <img [src]="'http://image.tmdb.org/t/p/w500/' + movie.backgroundPath" />
   <img [src]="'http://image.tmdb.org/t/p/w500/' + movie.posterPath" />
 
 </div>
