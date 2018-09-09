@@ -7,12 +7,15 @@
   </div>
   <div class="year" (click)="setSortCriterion('year')">
     <i class="far fa-calendar-alt"></i>
+    <i *ngIf="sortCriterion == 'year'" class="sort-indicator fas" [ngClass]="sortAsc ? 'fa-caret-up' : 'fa-caret-down'"></i>
   </div>
   <div class="rating" (click)="setSortCriterion('rating')">
     <i class="fas fa-star"></i>
+    <i *ngIf="sortCriterion == 'rating'" class="sort-indicator fas" [ngClass]="sortAsc ? 'fa-caret-up' : 'fa-caret-down'"></i>
   </div>
   <div class="director" (click)="setSortCriterion('director')">
     <i class="fas fa-video"></i>
+    <i *ngIf="sortCriterion == 'director'" class="sort-indicator fas" [ngClass]="sortAsc ? 'fa-caret-up' : 'fa-caret-down'"></i>
   </div>
   <div class="search">
     <a routerLink="/search">

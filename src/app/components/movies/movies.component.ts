@@ -35,7 +35,7 @@ export class MoviesComponent implements OnInit {
           return (this.sortAsc ? 1 : -1) * (movie1.rating - movie2.rating);
         }
         return (this.sortAsc ? 1 : -1) * (movie1.directors.join(', ').localeCompare(movie2.directors.join(', ')));
-      }
+      });
   }
 
   setStatusFilter(statusFilter: number): void {
