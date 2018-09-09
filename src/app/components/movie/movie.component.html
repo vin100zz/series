@@ -1,3 +1,7 @@
+<a routerLink="/" class="global-home button home">
+  <i class="fas fa-home"></i>
+</a>
+
 <div *ngIf="movie">
 
   <img [src]="'http://image.tmdb.org/t/p/w500/' + movie.backgroundPath" />
@@ -37,7 +41,7 @@
     </div>
     <div *ngIf="movie.status !== -1">
       <div class="button update" [ngClass]="movie.status == 0 ? 'update1' : 'update0'" (click)="update()">
-        <i class="fas" [ngClass]="movie.status == 0 ? 'fa-check' : 'fa-undo-alt'"></i>
+        <i class="fas" [ngClass]="movie.status == 0 ? 'fa-check' : 'fa-exclamation'"></i>
       </div>
       <div class="button delete" (click)="delete()">
         <i class="fas fa-times"></i>

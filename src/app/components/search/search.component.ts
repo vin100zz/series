@@ -28,7 +28,8 @@ export class SearchComponent implements OnInit {
           return {
             type: resultDto.media_type,
             id: resultDto.id,
-            label: resultDto.media_type === 'movie' ? resultDto.title : resultDto.name
+            label: resultDto.media_type === 'movie' ? resultDto.title : resultDto.name,
+            picture: resultDto.media_type === 'person' ? resultDto.profile_path : resultDto.poster_path
           };
         });
       });

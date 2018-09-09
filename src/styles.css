@@ -7,18 +7,35 @@
   padding: 0;
   box-sizing: border-box;
 }
-html {
+html, input {
   font-family: arial;
   font-size: 14pt;
 }
 body {
+  position: relative;
   width: 500px;
   margin: auto;
 }
 ul {
   list-style-type: none;
 }
+body, a {
+  color: #111;
+  text-decoration: none;
+}
+img {
+  vertical-align: top;
+}
 
+/* Home */
+.global-home {
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  z-index: 2;
+}
+
+/* Icons */
 .far, .fas, .fal {
   font-size: 12pt;
 }
@@ -26,12 +43,15 @@ ul {
   margin-right: 8px;
 }
 
+/* Buttons */
 .button {
   width: 40px;
   height: 40px;
   line-height: 40px;
   border-radius: 100%;
   text-align: center;
+}
+.button, .button i {
   color: white;
 }
 .button .far, .button .fas, .button .fal {
@@ -39,6 +59,9 @@ ul {
 }
 .button:hover {
   filter: brightness(115%);
+}
+.button.home {
+  background-color: #222;
 }
 .button.save {
   background-color: dodgerblue;

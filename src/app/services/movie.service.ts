@@ -27,20 +27,20 @@ export class MovieService {
   }
 
   save(movie: Movie): Observable<Movie> {
-    return this.httpClient.post<Movie>('server/save.php?id=' + movie.id, movie, httpOptions);
+    return this.httpClient.post<Movie>('server/save.php?ts=' + Date.now() + '&id=' + movie.id, movie, httpOptions);
   }
 
   list(): Observable<Movie[]> {
-    return this.httpClient.get<Movie[]>('server/list.php');
+    return this.httpClient.get<Movie[]>('server/list.php?ts=' + Date.now() + '&');
   }
 
   update(id: string): Observable<Movie> {
-    return this.httpClient.get<Movie>('server/update.php?id=' + id);
+    return this.httpClient.get<Movie>('server/update.php?ts=' + Date.now() + '&id=' + id);
   }
 
   get(id: String): Observable<Movie> {
     return new Observable<Movie>((observer) => {
-      this.httpClient.get<Movie>('server/get.php?id=' + id).subscribe(movieDto => {
+      this.httpClient.get<Movie>('server/get.php?ts=' + Date.now() + '&id=' + id).subscribe(movieDto => {
         if (movieDto) {
           observer.next(movieDto);
           observer.complete();
@@ -58,7 +58,7 @@ export class MovieService {
   }
 
   delete(id: string): Observable<Object> {
-    return this.httpClient.get('server/delete.php?id=' + id);
+    return this.httpClient.get('server/delete.php?ts=' + Date.now() + '&id=' + id);
   }
 
 }

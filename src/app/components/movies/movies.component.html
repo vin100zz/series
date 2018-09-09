@@ -1,7 +1,46 @@
-<ul>
-  <li *ngFor="let movie of movies">
-    <a routerLink="/movie/{{movie.id}}">{{movie.title}}</a>
-    <span>></span>
-    <span>{{movie.status}}</span>
-  </li>
-</ul>
+<div class="header">
+  <div class="to-watch" (click)="setStatusFilter(0)">
+    <i class="fas fa-exclamation"></i>
+  </div>
+  <div class="watched" (click)="setStatusFilter(1)">
+    <i class="fas fa-check"></i>
+  </div>
+  <div class="year" (click)="setSortCriterion('year')">
+    <i class="far fa-calendar-alt"></i>
+  </div>
+  <div class="rating" (click)="setSortCriterion('rating')">
+    <i class="fas fa-star"></i>
+  </div>
+  <div class="director" (click)="setSortCriterion('director')">
+    <i class="fas fa-video"></i>
+  </div>
+  <div class="search">
+    <a routerLink="/search">
+      <i class="fas fa-search"></i>
+    </a>
+  </div>
+</div>
+
+<div class="body">
+  <ul>
+    <li *ngFor="let movie of filterAndSortMovies(movies)" class="movie">
+      <a routerLink="/movie/{{movie.id}}">
+        <div class="title">{{movie.title}}</div>
+        <div class="details">
+          <div class="year">
+            <i class="far fa-calendar-alt fa-left"></i>
+            <span>{{movie.releaseYear}}</span>
+          </div>
+          <div class="rating">
+            <i class="fas fa-star fa-left"></i>
+            <span>{{movie.rating}}</span>
+          </div>
+          <div class="director">
+            <i class="fas fa-video fa-left"></i>
+            <span>{{movie.directors.join(', ')}}</span>
+          </div>
+        </div>
+      </a>
+    </li>
+  </ul>
+</div>
