@@ -7,6 +7,7 @@ import { SerieDetailComponent } from './serie-detail/serie-detail.component';
 
 import { MoviesComponent } from './components/movies/movies.component';
 import { MovieComponent } from './components/movie/movie.component';
+import { PersonComponent } from './components/person/person.component';
 
 
 const routes: Routes = [
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'detail/:id', component: SerieDetailComponent },
   { path: 'movies', component: MoviesComponent },
   { path: 'movie/:id', component: MovieComponent },
+  { path: 'person/:id', component: PersonComponent },
   { path: 'search', component: SearchComponent }
 ];
 

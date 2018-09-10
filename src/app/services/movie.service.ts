@@ -3,7 +3,6 @@ import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 import { Movie } from '../model/movie';
-import { MovieStatus } from '../model/movieStatus';
 
 import 'rxjs/add/operator/map';
 import { HttpHeaders } from '@angular/common/http';

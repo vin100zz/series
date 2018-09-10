@@ -1,0 +1,25 @@
+<a routerLink="/" class="global-home button home">
+  <i class="fas fa-home"></i>
+</a>
+
+<div *ngIf="person">
+  {{person.name}} {{person.birthYear}} - {{person.deathYear}}
+
+  <img [src]="'http://image.tmdb.org/t/p/w500/' + person.profilePath" />
+
+  <ul>
+    <li *ngFor="let direction of person.directions">
+      <a routerLink="/movie/{{direction.movieId}}">{{direction.title}}</a>
+    </li>
+  </ul>
+
+  <hr/>
+
+  <ul>
+    <li *ngFor="let cast of person.casts">
+      <a routerLink="/movie/{{cast.movieId}}">{{cast.title}} ({{cast.character}})</a>
+    </li>
+  </ul>
+
+
+</div>

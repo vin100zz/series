@@ -12,6 +12,7 @@ import { RolesComponent } from './roles/roles.component';
 import { MovieComponent } from './components/movie/movie.component';
 import { MoviesComponent } from './components/movies/movies.component';
 import { SearchComponent } from './components/search/search.component';
+import { PersonComponent } from './components/person/person.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { SearchComponent } from './components/search/search.component';
     RolesComponent,
     MovieComponent,
     MoviesComponent,
-    SearchComponent
+    SearchComponent,
+    PersonComponent
   ],
   imports: [
     BrowserModule,

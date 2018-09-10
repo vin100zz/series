@@ -12,7 +12,7 @@
     <li *ngFor="let result of results">
       <img [src]="'http://image.tmdb.org/t/p/w500/' + result.picture" />
       <div class="result-details">
-        <a routerLink="/movie/{{result.id}}">{{result.label}}</a>
+        <a routerLink="{{result.link}}">{{result.label}}</a>
       </div>
     </li>
   </ul>
