@@ -26,7 +26,7 @@ export class MoviesComponent implements OnInit {
 
   filterAndSortMovies(): Movie[] {
     return this.movies
-      .filter(movie => movie.status == this.statusFilter) // TODO: ===
+      .filter(movie => movie.status === this.statusFilter)
       .sort((movie1, movie2) => {
         if (this.sortCriterion === 'year') {
           return (this.sortAsc ? 1 : -1) * (movie1.releaseYear - movie2.releaseYear);

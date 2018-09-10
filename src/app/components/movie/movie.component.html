@@ -40,8 +40,8 @@
       </div>
     </div>
     <div *ngIf="movie.status !== -1">
-      <div class="button update" [ngClass]="movie.status == 0 ? 'update1' : 'update0'" (click)="update()">
-        <i class="fas" [ngClass]="movie.status == 0 ? 'fa-check' : 'fa-exclamation'"></i>
+      <div class="button update" [ngClass]="movie.status === 0 ? 'update1' : 'update0'" (click)="update()">
+        <i class="fas" [ngClass]="movie.status === 0 ? 'fa-check' : 'fa-exclamation'"></i>
       </div>
       <div class="button delete" (click)="delete()">
         <i class="fas fa-times"></i>

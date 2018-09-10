@@ -9,7 +9,7 @@ $id = $_GET["id"];
 $result = DBAccess::singleRow("SELECT * FROM movies WHERE id='$id'");
 
 $data = json_decode($result["data"], true);
-$data["status"] = ($data["status"] == "0" ? "1" : "0");
+$data["status"] = ($data["status"] == 0 ? 1 : 0);
 $data = json_encode($data);
 
 $data = str_replace("'", "''", $data);
