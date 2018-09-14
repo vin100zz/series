@@ -13,6 +13,7 @@ import { MovieComponent } from './components/movie/movie.component';
 import { MoviesComponent } from './components/movies/movies.component';
 import { SearchComponent } from './components/search/search.component';
 import { PersonComponent } from './components/person/person.component';
+import { SerieComponent } from './components/serie/serie.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { PersonComponent } from './components/person/person.component';
     MovieComponent,
     MoviesComponent,
     SearchComponent,
-    PersonComponent
+    PersonComponent,
+    SerieComponent
   ],
   imports: [
     BrowserModule,

@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 
 import { ActivatedRoute } from '@angular/router';
 
-import { Serie } from '../model/serie';
+import { VSerie } from '../model/vserie';
 import { SerieService } from '../serie.service';
 
 @Component({
@@ -12,7 +12,7 @@ import { SerieService } from '../serie.service';
 })
 export class SerieDetailComponent implements OnInit {
 
-	@Input() serie: Serie;
+	@Input() serie: VSerie;
 
 	constructor(
 		private route: ActivatedRoute,

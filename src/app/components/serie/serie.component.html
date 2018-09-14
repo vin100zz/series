@@ -2,20 +2,20 @@
   <i class="fas fa-home"></i>
 </a>
 
-<div *ngIf="movie">
+<div *ngIf="serie">
 
-  <img [src]="'http://image.tmdb.org/t/p/w500/' + movie.backgroundPath" />
+  <img [src]="'http://image.tmdb.org/t/p/w500/' + serie.backgroundPath" />
 
   <div class="header">
-    <div class="title">{{movie.title}}</div>
+    <div class="title">{{serie.title}}</div>
     <div class="details">
       <div>
         <i class="far fa-calendar-alt fa-left"></i>
-        <span>{{movie.releaseYear}}</span>
+        <span>{{serie.releaseYear}}</span>
       </div>
       <div>
         <div class="rating">
-          <div class="rating-top" [ngStyle]="{'width': movie.rating*10+'%'}">
+          <div class="rating-top" [ngStyle]="{'width': serie.rating*10+'%'}">
             <span>★</span>
             <span>★</span>
             <span>★</span>
@@ -30,18 +30,18 @@
             <span>★</span>
           </div>
         </div>
-        <span>{{movie.rating}}</span>
+        <span>{{serie.rating}}</span>
       </div>
     </div>
 
-    <div *ngIf="movie.status === -1">
+    <div *ngIf="serie.status === -1">
       <div class="button save" (click)="save()">
         <i class="fas fa-plus"></i>
       </div>
     </div>
-    <div *ngIf="movie.status !== -1">
-      <div class="button update" [ngClass]="movie.status === 0 ? 'update1' : 'update0'" (click)="update()">
-        <i class="fas" [ngClass]="movie.status === 0 ? 'fa-check' : 'fa-exclamation'"></i>
+    <div *ngIf="serie.status !== -1">
+      <div class="button update" [ngClass]="serie.status === 0 ? 'update1' : 'update0'" (click)="update()">
+        <i class="fas" [ngClass]="serie.status === 0 ? 'fa-check' : 'fa-exclamation'"></i>
       </div>
       <div class="button delete" (click)="delete()">
         <i class="fas fa-times"></i>
@@ -54,7 +54,7 @@
     <div class="section directors">
       <i class="fas fa-video"></i>
       <ul>
-        <li *ngFor="let direction of movie.directions">
+        <li *ngFor="let direction of serie.directions">
           <a routerLink="/person/{{direction.personId}}">{{direction.personName}}</a>
         </li>
       </ul>
@@ -63,7 +63,7 @@
     <div class="section actors">
       <i class="fas fa-user"></i>
       <ul>
-        <li *ngFor="let cast of movie.casts">
+        <li *ngFor="let cast of serie.casts">
           <div class="actor">
             <a routerLink="/person/{{cast.personId}}">{{cast.personName}}</a>
           </div>
@@ -74,12 +74,11 @@
 
     <div class="section summary">
       <i class="fas fa-quote-right"></i>
-      <div class="tagline">{{movie.tagline}}</div>
-      <div class="overview">{{movie.overview}}</div>
+      <div class="overview">{{serie.overview}}</div>
     </div>
 
   </div>
 
-  <img [src]="'http://image.tmdb.org/t/p/w500/' + movie.posterPath" />
+  <img [src]="'http://image.tmdb.org/t/p/w500/' + serie.posterPath" />
 
 </div>

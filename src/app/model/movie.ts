@@ -1,4 +1,24 @@
-import { Cast } from './cast';
+class Direction {
+  personId: number;
+  personName: string;
+
+  constructor(dto: Object) {
+    this.personId = dto['id'];
+    this.personName = dto['name'];
+  }
+}
+
+class Cast {
+  personId: number;
+  personName: string;
+  character: string;
+
+  constructor(dto: Object) {
+    this.personId = dto['id'];
+    this.personName = dto['name'];
+    this.character = dto['character'];
+  }
+}
 
 export class Movie {
   id: string;
@@ -15,8 +35,8 @@ export class Movie {
   backgroundPath: string;
   posterPath: string;
 
+  directions: Direction[];
   casts: Cast[];
-  directors: string[];
 
   status: number = -1;
 
@@ -35,13 +55,14 @@ export class Movie {
     this.backgroundPath = dto['backdrop_path'];
     this.posterPath = dto['poster_path'];
 
+    this.directions = dto['credits']['crew']
+      .filter(crewDto => crewDto.job === 'Director')
+      .map(directorDto => new Direction(directorDto));
+
     this.casts = dto['credits']['cast']
       .splice(0, 5)
       .map(castDto => new Cast(castDto));
 
-    this.directors = dto['credits']['crew']
-      .filter(crewDto => crewDto.job === 'Director')
-      .map(directorDto => directorDto.name);
   }
 
 }

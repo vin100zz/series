@@ -18,10 +18,11 @@ export class MoviesComponent implements OnInit {
   sortAsc = false;
 
   constructor(private movieService: MovieService) {
-    this.movieService.list().subscribe(movies => this.movies = movies);
   }
 
   ngOnInit() {
+    this.movieService.list().subscribe(movies => this.movies = movies);
+    //this.movieService.rebuildAll();
   }
 
   filterAndSortMovies(): Movie[] {
@@ -34,7 +35,7 @@ export class MoviesComponent implements OnInit {
         if (this.sortCriterion === 'rating') {
           return (this.sortAsc ? 1 : -1) * (movie1.rating - movie2.rating);
         }
-        return (this.sortAsc ? 1 : -1) * (movie1.directors.join(', ').localeCompare(movie2.directors.join(', ')));
+        return (this.sortAsc ? 1 : -1) * (movie1.directions[0].personName.localeCompare(movie2.directions[0].personName));
       });
   }
 

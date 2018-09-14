@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
-import { Serie } from './model/serie';
+import { VSerie } from './model/vserie';
 import { HttpClient } from '@angular/common/http';
 
 import 'rxjs/add/operator/map';
@@ -15,15 +15,15 @@ export class SerieService {
     this.getSeries();
   }
 
-  getSeries(): Observable<Serie[]> {
-    return this.httpClient.get<Serie[]>('assets/data.json')
-      .map(seriesDto => seriesDto.map(serieDto => new Serie(serieDto)))
+  getSeries(): Observable<VSerie[]> {
+    return this.httpClient.get<VSerie[]>('assets/data.json')
+      .map(seriesDto => seriesDto.map(serieDto => new VSerie(serieDto)))
   }
 
-  getSerie(id: String): Observable<Serie> {
+  getSerie(id: String): Observable<VSerie> {
     return Observable.create(observer => {
       this.getSeries().subscribe(series => {
-        let serie: Serie = series.find(serie => serie.id === id);
+        let serie: VSerie = series.find(serie => serie.id === id);
         observer.next(serie);
         observer.complete();
       });

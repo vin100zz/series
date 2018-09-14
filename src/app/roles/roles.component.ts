@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { Serie } from '../model/serie';
+import { VSerie } from '../model/vserie';
 import { Role } from '../model/role';
 
 @Component({
@@ -10,7 +10,7 @@ import { Role } from '../model/role';
 })
 export class RolesComponent implements OnInit {
 
-  @Input() serie: Serie;
+  @Input() serie: VSerie;
   @Input() roles: Role[];
 
   ngOnInit(): void {

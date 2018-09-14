@@ -60,4 +60,26 @@ export class MovieService {
     return this.httpClient.get('server/delete.php?ts=' + Date.now() + '&id=' + id);
   }
 
+  rebuildAll(): void {
+    let sleep = function (ms) {
+      var start = new Date().getTime(), expire = start + ms;
+      while (new Date().getTime() < expire) { }
+      return;
+    }
+
+    this.list().subscribe(movies => {
+      movies.forEach(movie => {
+        sleep(1000);
+        this.delete(movie.id).subscribe(x => {
+          this.httpClient.get('https://api.themoviedb.org/3/movie/' + movie.id + '?api_key=7aac1d19d45ad4753555583cabc0832d&language=fr&region=FR&append_to_response=credits').map(refreshedMovieDto => new Movie(refreshedMovieDto)).subscribe(refreshedMovie => {
+            sleep(1000);
+            this.save(refreshedMovie).subscribe();
+          });
+        });
+      });
+    })
+  }
+
+
+
 }

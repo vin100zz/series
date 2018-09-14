@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Serie } from '../model/serie';
+import { VSerie } from '../model/vserie';
 import { SerieService } from '../serie.service';
 
 @Component({
@@ -20,17 +20,6 @@ export class SeriesComponent implements OnInit {
     this.getSeries();
   }
 
-  series: Serie[];
-
-  /*serie: Serie = {
-    id: 1,
-    name: 'Dexter'
-  };*/
-
-  /*selectedSerie: Serie;
-
-  onSelect(serie: Serie): void {
-    this.selectedSerie = serie;
-  }*/
+  series: VSerie[];
 
 }
