@@ -22,4 +22,22 @@ export class SerieComponent implements OnInit {
     });
   }
 
+  save(): void {
+    this.serieService.save(this.serie).subscribe(serie => {
+      this.serie = serie;
+    });
+  }
+
+  update(): void {
+    this.serieService.update(this.serie.id).subscribe(serie => {
+      this.serie = serie;
+    });
+  }
+
+  delete(): void {
+    this.serieService.delete(this.serie.id).subscribe(serie => {
+      this.router.navigateByUrl('/movies');
+    });
+  }
+
 }

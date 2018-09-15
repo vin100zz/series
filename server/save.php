@@ -2,18 +2,15 @@
 
 include_once "db.php";
 
-//header('Access-Control-Allow-Origin: *');
-
 $id = $_GET["id"];
+$type = $_GET["type"];
 $data = utf8_decode(file_get_contents('php://input'));
-
 $data = str_replace("'", "''", $data);
-$data = str_replace("\"status\":-1", "\"status\":0", $data);
 
-DBAccess::exec("INSERT INTO movies(id, data) VALUES ('$id', '$data')");
+DBAccess::exec("INSERT INTO shows(id, type, status, data) VALUES ('$id', '$type', 0, '$data')");
 
-$movie = DBAccess::singleValue("SELECT data FROM movies WHERE id='$id'");
-$movie = json_decode($movie);
-print json_encode($movie, JSON_PRETTY_PRINT);
+$show = DBAccess::singleRow("SELECT * FROM shows WHERE id='$id' AND type='$type'");
+$show["data"] = json_decode($show["data"]);
+print json_encode($show, JSON_PRETTY_PRINT);
 
 ?>

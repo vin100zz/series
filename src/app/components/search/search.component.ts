@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { MovieService } from '../../services/movie.service';
+import { ShowService } from '../../services/show.service';
 import { Subject } from 'rxjs';
 import "rxjs/Rx";
 
@@ -15,7 +15,7 @@ export class SearchComponent implements OnInit {
 
   results = [];
 
-  constructor(private movieService: MovieService) { }
+  constructor(private showService: ShowService) { }
 
   ngOnInit() {
     this.querySubject.debounceTime(500).subscribe(query => {
@@ -23,7 +23,7 @@ export class SearchComponent implements OnInit {
         this.results = [];
         return;
       }
-      this.movieService.search(query).subscribe(searchResultsDto => {
+      this.showService.search(query).subscribe(searchResultsDto => {
         this.results = searchResultsDto['results'].slice(0, 10).map(resultDto => {
           return {
             type: resultDto.media_type,

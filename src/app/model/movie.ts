@@ -1,68 +1,20 @@
-class Direction {
-  personId: number;
-  personName: string;
+import { Show } from '../model/show';
 
-  constructor(dto: Object) {
-    this.personId = dto['id'];
-    this.personName = dto['name'];
-  }
-}
+export class Movie extends Show {
+  static TYPE: string = 'M';
+  static TMDB_KEY = 'movie';
 
-class Cast {
-  personId: number;
-  personName: string;
-  character: string;
-
-  constructor(dto: Object) {
-    this.personId = dto['id'];
-    this.personName = dto['name'];
-    this.character = dto['character'];
-  }
-}
-
-export class Movie {
-  id: string;
-  title: string;
   originalTitle: string;
   releaseYear: number;
-
   tagline: string;
-  overview: string;
 
-  popularity: number;
-  rating: number;
+  constructor(data: Object, status: string = "-1") {
+    super(data, Movie.TYPE, status);
 
-  backgroundPath: string;
-  posterPath: string;
-
-  directions: Direction[];
-  casts: Cast[];
-
-  status: number = -1;
-
-  constructor(dto: Object) {
-    this.id = dto['id'] + '';
-    this.title = dto['title'];
-    this.originalTitle = dto['original_title'];
-    this.releaseYear = parseInt(dto['release_date'].substr(0, 4), 10);
-
-    this.tagline = dto['tagline'];
-    this.overview = dto['overview'];
-
-    this.popularity = dto['popularity'];
-    this.rating = dto['vote_average'];
-
-    this.backgroundPath = dto['backdrop_path'];
-    this.posterPath = dto['poster_path'];
-
-    this.directions = dto['credits']['crew']
-      .filter(crewDto => crewDto.job === 'Director')
-      .map(directorDto => new Direction(directorDto));
-
-    this.casts = dto['credits']['cast']
-      .splice(0, 5)
-      .map(castDto => new Cast(castDto));
-
+    this.originalTitle = data['original_title'];
+    this.releaseYear = parseInt(data['release_date'].substr(0, 4), 10);
+    this.tagline = data['tagline'];
+    this.overview = data['overview'];
   }
 
 }

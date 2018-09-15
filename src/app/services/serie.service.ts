@@ -4,19 +4,41 @@ import { HttpClient } from '@angular/common/http';
 
 import { Serie } from '../model/serie';
 
+import { ShowService } from './show.service';
+
 import 'rxjs/add/operator/map';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class SerieService {
 
-  constructor(private httpClient: HttpClient) {
+  constructor(private httpClient: HttpClient, private showService: ShowService) {
   }
 
-  get(id: string): Observable<Serie> {
-    return this.httpClient.get('https://api.themoviedb.org/3/tv/' + id + '?api_key=7aac1d19d45ad4753555583cabc0832d&language=fr&region=FR&append_to_response=credits')
-      .map(dto => new Serie(dto));
+  save(serie: Serie): Observable<Serie> {
+    return this.showService.save<Serie>(serie, this.mapDto);
+  }
+
+  update(id: string): Observable<Serie> {
+    return this.showService.update<Serie>(id, Serie.TYPE, this.mapDto);
+  }
+
+  get(id: String): Observable<Serie> {
+    return this.showService.get<Serie>(id, Serie.TYPE, Serie.TMDB_KEY, this.mapDto, this.mapData);
+  }
+
+  delete(id: string): Observable<Object> {
+    return this.showService.update<Serie>(id, Serie.TYPE, this.mapDto);
+  }
+
+  mapDto(dto: Object): Serie {
+    return new Serie(dto['data'], dto['status']);
+  }
+
+  mapData(data: Object): Serie {
+    return new Serie(data);
   }
 
 }

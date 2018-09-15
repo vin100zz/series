@@ -4,82 +4,41 @@ import { HttpClient } from '@angular/common/http';
 
 import { Movie } from '../model/movie';
 
-import 'rxjs/add/operator/map';
-import { HttpHeaders } from '@angular/common/http';
+import { ShowService } from './show.service';
 
-const httpOptions = {
-  headers: new HttpHeaders({
-    'content-type': 'application/json'
-  })
-};
+import 'rxjs/add/operator/map';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class MovieService {
 
-  constructor(private httpClient: HttpClient) {
-  }
-
-  search(query: string): Observable<Object> {
-    return this.httpClient.get('https://api.themoviedb.org/3/search/multi?api_key=7aac1d19d45ad4753555583cabc0832d&language=fr&region=FR&query=' + query);
+  constructor(private httpClient: HttpClient, private showService: ShowService) {
   }
 
   save(movie: Movie): Observable<Movie> {
-    return this.httpClient.post<Movie>('server/save.php?ts=' + Date.now() + '&id=' + movie.id, movie, httpOptions);
-  }
-
-  list(): Observable<Movie[]> {
-    return this.httpClient.get<Movie[]>('server/list.php?ts=' + Date.now() + '&');
+    return this.showService.save<Movie>(movie, this.mapDto);
   }
 
   update(id: string): Observable<Movie> {
-    return this.httpClient.get<Movie>('server/update.php?ts=' + Date.now() + '&id=' + id);
+    return this.showService.update<Movie>(id, Movie.TYPE, this.mapDto);
   }
 
   get(id: String): Observable<Movie> {
-    return new Observable<Movie>((observer) => {
-      this.httpClient.get<Movie>('server/get.php?ts=' + Date.now() + '&id=' + id).subscribe(movieDto => {
-        if (movieDto) {
-          observer.next(movieDto);
-          observer.complete();
-          return;
-        }
-        this.httpClient.get('https://api.themoviedb.org/3/movie/' + id + '?api_key=7aac1d19d45ad4753555583cabc0832d&language=fr&region=FR&append_to_response=credits')
-          .map(dto => {
-            let movie: Movie = new Movie(dto);
-            observer.next(movie);
-            observer.complete();
-            return movie;
-          }).subscribe();
-      });
-    })
+    return this.showService.get<Movie>(id, Movie.TYPE, Movie.TMDB_KEY, this.mapDto, this.mapData);
   }
 
   delete(id: string): Observable<Object> {
-    return this.httpClient.get('server/delete.php?ts=' + Date.now() + '&id=' + id);
+    return this.showService.update<Movie>(id, Movie.TYPE, this.mapDto);
   }
 
-  rebuildAll(): void {
-    let sleep = function (ms) {
-      var start = new Date().getTime(), expire = start + ms;
-      while (new Date().getTime() < expire) { }
-      return;
-    }
-
-    this.list().subscribe(movies => {
-      movies.forEach(movie => {
-        sleep(1000);
-        this.delete(movie.id).subscribe(x => {
-          this.httpClient.get('https://api.themoviedb.org/3/movie/' + movie.id + '?api_key=7aac1d19d45ad4753555583cabc0832d&language=fr&region=FR&append_to_response=credits').map(refreshedMovieDto => new Movie(refreshedMovieDto)).subscribe(refreshedMovie => {
-            sleep(1000);
-            this.save(refreshedMovie).subscribe();
-          });
-        });
-      });
-    })
+  mapDto(dto: Object): Movie {
+    return new Movie(dto['data'], dto['status']);
   }
 
-
+  mapData(data: Object): Movie {
+    return new Movie(data);
+  }
 
 }

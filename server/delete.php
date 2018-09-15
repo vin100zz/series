@@ -2,10 +2,9 @@
 
 include_once "db.php";
 
-//header('Access-Control-Allow-Origin: *');
-
 $id = $_GET["id"];
+$type = $_GET["type"];
 
-DBAccess::exec("DELETE FROM movies WHERE id='$id'");
+DBAccess::exec("DELETE FROM shows WHERE id='$id' AND type='$type'");
 
 ?>

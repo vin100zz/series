@@ -2,12 +2,15 @@
 
 include_once "db.php";
 
-//header('Access-Control-Allow-Origin: *');
-
 $id = $_GET["id"];
+$type = $_GET["type"];
 
-$movie = DBAccess::singleValue("SELECT data FROM movies WHERE id='$id'");
-$movie = json_decode($movie);
-print json_encode($movie, JSON_PRETTY_PRINT);
+$show = DBAccess::singleRow("SELECT * FROM shows WHERE id='$id' AND type='$type'");
+if (!$show) {
+  return;
+}
+
+$show["data"] = json_decode($show["data"]);
+print json_encode($show, JSON_PRETTY_PRINT);
 
 ?>
