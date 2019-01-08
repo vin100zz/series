@@ -12,7 +12,8 @@ export class MoviesComponent implements OnInit {
 
   movies: Show[] = [];
 
-  statusFilter: number = 0;
+  watchedFilter: boolean = false;
+  toWatchFilter: boolean = true;
 
   sortCriterion: string = 'rating';
   sortAsc = false;
@@ -26,7 +27,7 @@ export class MoviesComponent implements OnInit {
 
   filterAndSortMovies(): Show[] {
     return this.movies
-      .filter(movie => movie.status === this.statusFilter)
+      .filter(movie => movie.watched === this.watchedFilter && movie.toWatch === this.toWatchFilter)
       .sort((movie1, movie2) => {
         /* if (this.sortCriterion === 'year') {
            return (this.sortAsc ? 1 : -1) * (movie1.releaseYear - movie2.releaseYear);
@@ -38,8 +39,12 @@ export class MoviesComponent implements OnInit {
       });
   }
 
-  setStatusFilter(statusFilter: number): void {
-    this.statusFilter = statusFilter;
+  toggleWatchedFilter(): void {
+    this.watchedFilter = !this.watchedFilter;
+  }
+
+  toggleToWatchFilter(): void {
+    this.toWatchFilter = !this.toWatchFilter;
   }
 
   setSortCriterion(sortCriterion: string): void {

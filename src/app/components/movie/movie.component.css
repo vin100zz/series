@@ -28,37 +28,8 @@ img {
   right: 10px;
   cursor: pointer;
 }
-.header .button.update {
+.header .button.watched {
   right: 60px;
-}
-
-/* Rating */
-.rating {
-  display: inline-block;
-  unicode-bidi: bidi-override;
-  color: #444;
-  font-size: 20px;
-  height: 20px;
-  width: 90px;
-  margin: 0 auto;
-  margin-right: 8px;
-  position: relative;
-  padding: 0;
-}
-.rating-top {
-  color: deepskyblue;
-  padding: 0;
-  position: absolute;
-  z-index: 1;
-  display: block;
-  top: 0;
-  left: 0;
-  overflow: hidden;
-}
-.rating-bottom {
-  padding: 0;
-  display: block;
-  z-index: 0;
 }
 
 /* Body */

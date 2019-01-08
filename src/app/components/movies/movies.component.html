@@ -1,9 +1,9 @@
 <div class="header">
-  <div class="to-watch" (click)="setStatusFilter(0)">
-    <i class="fas fa-exclamation"></i>
-  </div>
-  <div class="watched" (click)="setStatusFilter(1)">
+  <div class="watched" [ngClass]="watchedFilter ? 'active' : ''" (click)="toggleWatchedFilter()">
     <i class="fas fa-check"></i>
+  </div>
+  <div class="to-watch" [ngClass]="toWatchFilter ? 'active' : ''" (click)="toggleToWatchFilter()">
+    <i class="fas fa-exclamation"></i>
   </div>
   <div class="year" (click)="setSortCriterion('year')">
     <i class="far fa-calendar-alt"></i>
@@ -38,10 +38,10 @@
             <i class="fas fa-star fa-left"></i>
             <span>{{movie.rating}}</span>
           </div>
-          <div class="director">
+          <!--<div class="director">
             <i class="fas fa-video fa-left"></i>
             <span>{{movie.directions[0].personName}}</span>
-          </div>
+          </div>-->
         </div>
       </a>
     </li>

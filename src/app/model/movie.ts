@@ -8,8 +8,8 @@ export class Movie extends Show {
   releaseYear: number;
   tagline: string;
 
-  constructor(data: Object, status: string = "-1") {
-    super(data, Movie.TYPE, status);
+  constructor(data: Object, inDb: boolean, watched: string, toWatch: string) {
+    super(data, Movie.TYPE, inDb, watched, toWatch);
 
     this.originalTitle = data['original_title'];
     this.releaseYear = parseInt(data['release_date'].substr(0, 4), 10);

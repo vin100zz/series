@@ -21,24 +21,24 @@ export class MovieService {
     return this.showService.save<Movie>(movie, this.mapDto);
   }
 
-  update(id: string): Observable<Movie> {
-    return this.showService.update<Movie>(id, Movie.TYPE, this.mapDto);
+  update(id: string, watched: boolean, toWatch: boolean): Observable<Movie> {
+    return this.showService.update<Movie>(id, Movie.TYPE, watched, toWatch, this.mapDto);
   }
 
   get(id: String): Observable<Movie> {
     return this.showService.get<Movie>(id, Movie.TYPE, Movie.TMDB_KEY, this.mapDto, this.mapData);
   }
 
-  delete(id: string): Observable<Object> {
-    return this.showService.update<Movie>(id, Movie.TYPE, this.mapDto);
+  delete(id: string): void {
+    this.showService.delete(id, Movie.TYPE);
   }
 
   mapDto(dto: Object): Movie {
-    return new Movie(dto['data'], dto['status']);
+    return new Movie(dto['data'], true, dto['watched'], dto['towatch']);
   }
 
   mapData(data: Object): Movie {
-    return new Movie(data);
+    return new Movie(data, false, '', '');
   }
 
 }

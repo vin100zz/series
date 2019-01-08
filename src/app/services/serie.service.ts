@@ -21,24 +21,24 @@ export class SerieService {
     return this.showService.save<Serie>(serie, this.mapDto);
   }
 
-  update(id: string): Observable<Serie> {
-    return this.showService.update<Serie>(id, Serie.TYPE, this.mapDto);
+  update(id: string, watched: boolean, toWatch: boolean): Observable<Serie> {
+    return this.showService.update<Serie>(id, Serie.TYPE, watched, toWatch, this.mapDto);
   }
 
   get(id: String): Observable<Serie> {
     return this.showService.get<Serie>(id, Serie.TYPE, Serie.TMDB_KEY, this.mapDto, this.mapData);
   }
 
-  delete(id: string): Observable<Object> {
-    return this.showService.update<Serie>(id, Serie.TYPE, this.mapDto);
+  delete(id: string): void {
+    this.showService.delete(id, Serie.TYPE);
   }
 
   mapDto(dto: Object): Serie {
-    return new Serie(dto['data'], dto['status']);
+    return new Serie(dto['data'], true, dto['watched'], dto['towatch']);
   }
 
   mapData(data: Object): Serie {
-    return new Serie(data);
+    return new Serie(data, false, '', '');
   }
 
 }

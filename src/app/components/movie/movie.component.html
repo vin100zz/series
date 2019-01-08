@@ -14,38 +14,16 @@
         <span>{{movie.releaseYear}}</span>
       </div>
       <div>
-        <div class="rating">
-          <div class="rating-top" [ngStyle]="{'width': movie.rating*10+'%'}">
-            <span>★</span>
-            <span>★</span>
-            <span>★</span>
-            <span>★</span>
-            <span>★</span>
-          </div>
-          <div class="rating-bottom">
-            <span>★</span>
-            <span>★</span>
-            <span>★</span>
-            <span>★</span>
-            <span>★</span>
-          </div>
-        </div>
+        <i class="fas fa-star fa-left"></i>
         <span>{{movie.rating}}</span>
       </div>
     </div>
 
-    <div *ngIf="movie.status === -1">
-      <div class="button save" (click)="save()">
-        <i class="fas fa-plus"></i>
-      </div>
+    <div class="button watched" [ngClass]="movie.watched ? 'active' : ''" (click)="toggleWatched()">
+      <i class="fas fa-check"></i>
     </div>
-    <div *ngIf="movie.status !== -1">
-      <div class="button update" [ngClass]="movie.status === 0 ? 'update1' : 'update0'" (click)="update()">
-        <i class="fas" [ngClass]="movie.status === 0 ? 'fa-check' : 'fa-exclamation'"></i>
-      </div>
-      <div class="button delete" (click)="delete()">
-        <i class="fas fa-times"></i>
-      </div>
+    <div class="button to-watch" [ngClass]="movie.toWatch ? 'active' : ''" (click)="toggleToWatch()">
+      <i class="fas fa-exclamation"></i>
     </div>
   </div>
 

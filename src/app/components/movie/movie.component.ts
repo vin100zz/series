@@ -28,16 +28,26 @@ export class MovieComponent implements OnInit {
     });
   }
 
-  update(): void {
-    this.movieService.update(this.movie.id).subscribe(movie => {
-      this.movie = movie;
-    });
+  toggleWatched(): void {
+    if (!this.movie.inDb) {
+      this.movie.watched = true;
+      this.save();
+    } else {
+      this.movieService.update(this.movie.id, !this.movie.watched, this.movie.toWatch).subscribe(movie => {
+        this.movie = movie;
+      });
+    }
   }
 
-  delete(): void {
-    this.movieService.delete(this.movie.id).subscribe(movie => {
-      this.router.navigateByUrl('/movies');
-    });
+  toggleToWatch(): void {
+    if (!this.movie.inDb) {
+      this.movie.toWatch = true;
+      this.save();
+    } else {
+      this.movieService.update(this.movie.id, this.movie.watched, !this.movie.toWatch).subscribe(movie => {
+        this.movie = movie;
+      });
+    }
   }
 
 }

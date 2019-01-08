@@ -28,7 +28,7 @@ export class SerieComponent implements OnInit {
     });
   }
 
-  update(): void {
+  /*update(): void {
     this.serieService.update(this.serie.id).subscribe(serie => {
       this.serie = serie;
     });
@@ -38,6 +38,6 @@ export class SerieComponent implements OnInit {
     this.serieService.delete(this.serie.id).subscribe(serie => {
       this.router.navigateByUrl('/movies');
     });
-  }
+  }*/
 
 }

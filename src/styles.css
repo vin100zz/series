@@ -51,27 +51,43 @@ img {
   border-radius: 100%;
   text-align: center;
 }
-.button, .button i {
+.button i {
   color: white;
 }
+
 .button .far, .button .fas, .button .fal {
   font-size: 13pt;
 }
 .button:hover {
   filter: brightness(115%);
 }
-.button.home {
-  background-color: #222;
+
+.button {
+  background-color: white;
 }
-.button.save {
+.button.watched {
+  border-color: dodgerblue;
+}
+.button.watched i {
+  color: dodgerblue;
+}
+.button.to-watch {
+  border-color: crimson;
+}
+.button.to-watch i {
+  color: crimson;
+}
+
+.button.active i {
+  color: white;
+}
+.button.watched.active {
   background-color: dodgerblue;
 }
-.button.delete {
+.button.to-watch.active {
   background-color: crimson;
 }
-.button.update0 {
-  background-color:lightslategray;
-}
-.button.update1 {
-  background-color: forestgreen;
+
+.button.home {
+  background-color: #222;
 }

@@ -33,19 +33,19 @@ export class ShowService {
       .map(dtoList => {
         return dtoList.map(dto => {
           if (dto['type'] === Movie.TYPE) {
-            return new Movie(dto['data'], dto['status']);
+            return new Movie(dto['data'], true, dto['watched'], dto['towatch']);
           }
-          return new Serie(dto['data'], dto['status']);
+          return new Serie(dto['data'], true, dto['watched'], dto['towatch']);
         });
       });
   }
 
   save<T>(show: Show, mapDtoFn: (dto: Object) => T): Observable<T> {
-    return this.httpClient.post<T>('server/save.php?ts=' + Date.now() + '&type=' + show.type + '&id=' + show.id, show.data, httpOptions).map(mapDtoFn);
+    return this.httpClient.post<T>('server/save.php?ts=' + Date.now() + '&type=' + show.type + '&id=' + show.id + '&watched=' + show.watched + '&toWatch=' + show.toWatch, show.data, httpOptions).map(mapDtoFn);
   }
 
-  update<T>(id: string, type: string, mapDtoFn: (dto: Object) => T): Observable<T> {
-    return this.httpClient.get<T>('server/update.php?ts=' + Date.now() + '&type=' + type + '&id=' + id).map(mapDtoFn);
+  update<T>(id: string, type: string, watched: boolean, toWatch: boolean, mapDtoFn: (dto: Object) => T): Observable<T> {
+    return this.httpClient.get<T>('server/update.php?ts=' + Date.now() + '&type=' + type + '&id=' + id + '&watched=' + watched + '&toWatch=' + toWatch).map(mapDtoFn);
   }
 
   get<T>(id: String, type: string, tmdbKey: string, mapDtoFn: (dto: Object) => T, mapDataFn: (dto: Object) => T): Observable<T> {
@@ -65,8 +65,8 @@ export class ShowService {
     })
   }
 
-  delete(id: string, type: string): Observable<Object> {
-    return this.httpClient.get('server/delete.php?ts=' + Date.now() + '&type=' + type + '&id=' + id);
+  delete(id: string, type: string): void {
+    this.httpClient.get('server/delete.php?ts=' + Date.now() + '&type=' + type + '&id=' + id);
   }
 
 }

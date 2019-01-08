@@ -8,25 +8,37 @@
   display: inline-block;
   padding: 10px;
 }
-.header .to-watch {
-  width: 30%;
-  background: lightslategray;
-}
+
+.header .to-watch,
 .header .watched {
   width: 30%;
-  background: forestgreen;
 }
+.header .watched {
+  color: dodgerblue;
+}
+.header .to-watch {
+  color: crimson;
+}
+.header .watched.active {
+  background: dodgerblue;
+  color: white;
+}
+.header .to-watch.active {
+  background: crimson;
+  color: white;
+}
+
 .header .year {
   width: 10%;
-  background: firebrick;
+  background: mediumslateblue;
 }
 .header .rating {
   width: 10%;
-  background: firebrick;
+  background: mediumslateblue;
 }
 .header .director {
   width: 10%;
-  background: firebrick;
+  background: mediumslateblue;
 }
 .header .search {
   width: 10%;

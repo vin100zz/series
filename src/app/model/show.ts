@@ -24,6 +24,8 @@ export class Show {
   data: Object;
   type: string;
 
+  inDb: boolean;
+
   id: string;
   title: string;
   overview: string;
@@ -35,11 +37,14 @@ export class Show {
   directions: Direction[];
   casts: Cast[];
 
-  status: number;
+  watched: boolean;
+  toWatch: boolean;
 
-  constructor(data: Object, type: string, status: string) {
+  constructor(data: Object, type: string, inDb: boolean, watched: string, toWatch: string) {
     this.data = data;
     this.type = type;
+
+    this.inDb = inDb;
 
     this.id = data['id'];
     this.title = data['title'];
@@ -57,7 +62,9 @@ export class Show {
       .splice(0, 5)
       .map(castdata => new Cast(castdata));
 
-    this.status = parseInt(status, 10);
+
+    this.watched = watched === 'Y' || watched === 'true';
+    this.toWatch = toWatch === 'Y' || toWatch === 'true';
   }
 
 }
