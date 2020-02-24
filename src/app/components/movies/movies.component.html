@@ -1,49 +1,32 @@
-<div class="header">
-  <div class="watched" [ngClass]="watchedFilter ? 'active' : ''" (click)="toggleWatchedFilter()">
-    <i class="fas fa-check"></i>
-  </div>
-  <div class="to-watch" [ngClass]="toWatchFilter ? 'active' : ''" (click)="toggleToWatchFilter()">
-    <i class="fas fa-exclamation"></i>
-  </div>
-  <div class="year" (click)="setSortCriterion('year')">
-    <i class="far fa-calendar-alt"></i>
-    <i *ngIf="sortCriterion == 'year'" class="sort-indicator fas" [ngClass]="sortAsc ? 'fa-caret-up' : 'fa-caret-down'"></i>
-  </div>
-  <div class="rating" (click)="setSortCriterion('rating')">
-    <i class="fas fa-star"></i>
-    <i *ngIf="sortCriterion == 'rating'" class="sort-indicator fas" [ngClass]="sortAsc ? 'fa-caret-up' : 'fa-caret-down'"></i>
-  </div>
-  <div class="director" (click)="setSortCriterion('director')">
-    <i class="fas fa-video"></i>
-    <i *ngIf="sortCriterion == 'director'" class="sort-indicator fas" [ngClass]="sortAsc ? 'fa-caret-up' : 'fa-caret-down'"></i>
-  </div>
-  <div class="search">
-    <a routerLink="/search">
-      <i class="fas fa-search"></i>
-    </a>
-  </div>
-</div>
-
 <div class="body">
   <ul>
-    <li *ngFor="let movie of filterAndSortMovies(movies)" class="movie">
-      <a routerLink="/movie/{{movie.id}}">
-        <div class="title">{{movie.title}}</div>
-        <div class="details">
-          <div class="year">
-            <i class="far fa-calendar-alt fa-left"></i>
-            <span>{{movie.releaseYear}}</span>
-          </div>
-          <div class="rating">
-            <i class="fas fa-star fa-left"></i>
-            <span>{{movie.rating}}</span>
-          </div>
-          <!--<div class="director">
-            <i class="fas fa-video fa-left"></i>
-            <span>{{movie.directions[0].personName}}</span>
-          </div>-->
-        </div>
-      </a>
+    <li *ngFor="let tag of tags" class="tag">
+      <div>{{tag.label}}</div>
+      <ul>
+        <li *ngFor="let movie of tag.shows" class="movie">
+          <a [routerLink]="movie.type === 'M' ? ['/movie/' + movie.id] : ['/serie/' + movie.id]">
+            <div class="title">{{movie.title}}</div>
+            <div class="details">
+              <div class="year">
+                <i class="far fa-calendar-alt fa-left"></i>
+                <span>{{movie.releaseYear}}</span>
+              </div>
+              <div class="rating">
+                <i class="fas fa-star fa-left"></i>
+                <span>{{movie.rating}}</span>
+              </div>
+            </div>
+            <div class="tags">
+              <div class="button watched active" *ngIf="movie.watched">
+                <i class="fas fa-check"></i>
+              </div>
+              <div class="button to-watch active" *ngIf="movie.toWatch">
+                <i class="fas fa-exclamation"></i>
+              </div>
+            </div>
+          </a>
+        </li>
+      </ul>
     </li>
   </ul>
 </div>

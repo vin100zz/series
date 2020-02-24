@@ -34,11 +34,11 @@ export class MovieService {
   }
 
   mapDto(dto: Object): Movie {
-    return new Movie(dto['data'], true, dto['watched'], dto['towatch']);
+    return new Movie(dto['data'], true, dto['tags']);
   }
 
   mapData(data: Object): Movie {
-    return new Movie(data, false, '', '');
+    return new Movie(data, false, []);
   }
 
 }

@@ -34,11 +34,11 @@ export class SerieService {
   }
 
   mapDto(dto: Object): Serie {
-    return new Serie(dto['data'], true, dto['watched'], dto['towatch']);
+    return new Serie(dto['data'], true, dto['tags']);
   }
 
   mapData(data: Object): Serie {
-    return new Serie(data, false, '', '');
+    return new Serie(data, false, []);
   }
 
 }

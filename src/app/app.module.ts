@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
+import { NgbCarousel } from '@ng-bootstrap/ng-bootstrap';
+
 import { AppComponent } from './app.component';
 import { SeriesComponent } from './series/series.component';
 
@@ -31,7 +33,8 @@ import { SerieComponent } from './components/serie/serie.component';
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule/*,
+    NgbCarousel*/
   ],
   providers: [],
   bootstrap: [AppComponent]

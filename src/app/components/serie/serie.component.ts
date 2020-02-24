@@ -28,16 +28,26 @@ export class SerieComponent implements OnInit {
     });
   }
 
-  /*update(): void {
-    this.serieService.update(this.serie.id).subscribe(serie => {
-      this.serie = serie;
-    });
+  toggleWatched(): void {
+    /*if (!this.serie.inDb) {
+      this.serie.watched = true;
+      this.save();
+    } else {
+      this.serieService.update(this.serie.id, !this.serie.watched, this.serie.toWatch).subscribe(serie => {
+        this.serie = serie;
+      });
+    }*/
   }
 
-  delete(): void {
-    this.serieService.delete(this.serie.id).subscribe(serie => {
-      this.router.navigateByUrl('/movies');
-    });
-  }*/
+  toggleToWatch(): void {
+    /*if (!this.serie.inDb) {
+      this.serie.toWatch = true;
+      this.save();
+    } else {
+      this.serieService.update(this.serie.id, this.serie.watched, !this.serie.toWatch).subscribe(serie => {
+        this.serie = serie;
+      });
+    }*/
+  }
 
 }

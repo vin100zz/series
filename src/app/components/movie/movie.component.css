@@ -1,5 +1,5 @@
 img {
-  width: 500px;
+  width: 100%;
 }
 
 /* Header */
@@ -25,12 +25,35 @@ img {
 .header .button {
   position: absolute;
   top: 20px;
-  right: 10px;
+  right: 15px;
   cursor: pointer;
 }
-.header .button.watched {
-  right: 60px;
+
+
+/* Tag */
+.tags {
+  padding: 10px;
 }
+.tag {
+  display: inline-block;
+  font-size: 12pt;
+  padding: 5px 15px;
+  margin: 5px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  background: #ccc;
+}
+
+.tag.active {
+  background: brown;
+}
+.tag.active * {
+  color: white;
+}
+.tag .delete-tag {
+  margin-left: 10px;
+}
+
 
 /* Body */
 .body {
@@ -68,3 +91,4 @@ img {
 .summary .overview {
   text-align: justify;
 }
+

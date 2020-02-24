@@ -15,7 +15,7 @@ export class PersonService {
   }
 
   get(id: string): Observable<Person> {
-    return this.httpClient.get('https://api.themoviedb.org/3/person/' + id + '?api_key=7aac1d19d45ad4753555583cabc0832d&language=fr&region=FR&append_to_response=combined_credits')
+    return this.httpClient.get('https://api.themoviedb.org/3/person/' + id + '?api_key=7aac1d19d45ad4753555583cabc0832d&append_to_response=combined_credits')
       .map(dto => new Person(dto));
   }
 

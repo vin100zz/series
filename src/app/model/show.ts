@@ -37,17 +37,16 @@ export class Show {
   directions: Direction[];
   casts: Cast[];
 
-  watched: boolean;
-  toWatch: boolean;
+  tags: string[];
 
-  constructor(data: Object, type: string, inDb: boolean, watched: string, toWatch: string) {
+  constructor(data: Object, type: string, inDb: boolean, tags: string[]) {
     this.data = data;
     this.type = type;
 
     this.inDb = inDb;
 
     this.id = data['id'];
-    this.title = data['title'];
+    this.title = data['original_title'] || data['original_name'];
     this.overview = data['overview'];
     this.rating = data['vote_average'];
 
@@ -59,12 +58,11 @@ export class Show {
       .map(directordata => new Direction(directordata));
 
     this.casts = data['credits']['cast']
-      .splice(0, 5)
+      .slice(0, 8)
       .map(castdata => new Cast(castdata));
 
 
-    this.watched = watched === 'Y' || watched === 'true';
-    this.toWatch = toWatch === 'Y' || toWatch === 'true';
+    this.tags = tags;
   }
 
 }

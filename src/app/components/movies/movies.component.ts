@@ -3,6 +3,9 @@ import { Component, OnInit } from '@angular/core';
 import { ShowService } from '../../services/show.service';
 import { Show } from '../../model/show';
 
+import { Movie } from '../../model/movie';
+import { Serie } from '../../model/serie';
+
 @Component({
   selector: 'app-movies',
   templateUrl: './movies.component.html',
@@ -18,16 +21,28 @@ export class MoviesComponent implements OnInit {
   sortCriterion: string = 'rating';
   sortAsc = false;
 
+  tags;
+
   constructor(private showService: ShowService) {
   }
 
   ngOnInit() {
-    this.showService.list().subscribe(movies => this.movies = movies);
+    this.showService.list().subscribe(tags => {
+      this.tags = tags.map(tag => {
+        tag['shows'] = tag['shows'].map(show => {
+          if (show['show_type'] === Movie.TYPE) {
+            return new Movie(show['data'], true, show['tags']);
+          }
+          return new Serie(show['data'], true, show['tags']);
+        });
+        return tag;
+      })
+    });
   }
 
   filterAndSortMovies(): Show[] {
     return this.movies
-      .filter(movie => movie.watched === this.watchedFilter && movie.toWatch === this.toWatchFilter)
+      //.filter(movie => movie.watched === this.watchedFilter && movie.toWatch === this.toWatchFilter)
       .sort((movie1, movie2) => {
         /* if (this.sortCriterion === 'year') {
            return (this.sortAsc ? 1 : -1) * (movie1.releaseYear - movie2.releaseYear);
